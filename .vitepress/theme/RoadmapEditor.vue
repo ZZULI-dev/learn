@@ -135,8 +135,8 @@ const graph = computed<RoadmapGraph>(() => ({
 
 function edgeStyle(kind: RoadmapEdgeKind) {
   return kind === 'main'
-    ? { stroke: '#3f9f94', strokeWidth: 2 }
-    : { stroke: '#94aaa5', strokeWidth: 1.5, strokeDasharray: '2 5' }
+    ? { stroke: 'var(--roadmap-editor-main-edge)', strokeWidth: 2 }
+    : { stroke: 'var(--roadmap-editor-branch-edge)', strokeWidth: 1.5, strokeDasharray: '2 5' }
 }
 
 function toEditorNodes(source: RoadmapGraph): EditorNode[] {
@@ -983,7 +983,7 @@ watch(
         >
           <Background variant="lines" :gap="16" :size="1" pattern-color="var(--vp-c-divider)" />
           <Controls />
-          <MiniMap :node-color="(node) => (node.data?.kind === 'branch' ? '#e6c47d' : '#75bfb4')" />
+          <MiniMap :node-color="(node) => (node.data?.kind === 'branch' ? 'var(--roadmap-editor-minimap-branch)' : 'var(--roadmap-editor-minimap-main)')" />
         </VueFlow>
         <div
           v-if="selectedNodes.length > 1"

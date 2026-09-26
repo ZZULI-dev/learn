@@ -1,11 +1,11 @@
 .roadmap-tree {
-  --roadmap-line: #3f9f94;
-  --roadmap-main-bg: #ddf2ec;
-  --roadmap-main-border: #75bfb4;
-  --roadmap-branch-bg: #fff3d8;
-  --roadmap-branch-border: #e6c47d;
+  --roadmap-line: #5271d1;
+  --roadmap-main-bg: #eef3ff;
+  --roadmap-main-border: #c7d5fa;
+  --roadmap-branch-bg: #fff7e8;
+  --roadmap-branch-border: #edd7a3;
   --roadmap-choice-recommended: #7657d5;
-  --roadmap-choice-alternative: #4f8d38;
+  --roadmap-choice-alternative: #d17646;
   margin: 34px 0 56px;
 }
 
@@ -115,7 +115,7 @@
   border-radius: 50%;
   color: #ffffff;
   background: var(--roadmap-choice-color);
-  box-shadow: 0 1px 2px rgb(24 49 58 / 18%);
+  box-shadow: none;
   font-size: 12px;
   font-weight: 800;
   line-height: 1;
@@ -176,11 +176,11 @@
   box-sizing: border-box;
   min-height: 44px;
   border: 1px solid var(--roadmap-main-border);
-  border-radius: 7px;
+  border-radius: 6px;
   padding: 8px 12px;
   color: var(--vp-c-text-1);
   background: var(--roadmap-main-bg);
-  box-shadow: 0 1px 1px rgb(24 49 58 / 5%);
+  box-shadow: none;
   text-align: center;
   font: inherit;
   font-size: 14px;
@@ -223,7 +223,7 @@
 
 .roadmap-node--branch:hover:not(.is-completed):not(:disabled) {
   border-color: color-mix(in srgb, var(--roadmap-branch-border) 68%, var(--roadmap-line));
-  background: color-mix(in srgb, var(--roadmap-branch-bg) 80%, #f2c560);
+  background: color-mix(in srgb, var(--roadmap-branch-bg) 80%, #f1c36a);
 }
 
 .vp-doc .roadmap-note {
@@ -231,7 +231,7 @@
   z-index: 1;
   width: 208px;
   margin: 0;
-  border-left: 2px solid color-mix(in srgb, var(--roadmap-line) 56%, var(--vp-c-divider));
+  border-left: 1px solid var(--vp-c-divider);
   padding: 8px 12px;
   color: var(--vp-c-text-2);
   background: color-mix(in srgb, var(--vp-c-bg) 60%, transparent);
@@ -305,13 +305,13 @@
 }
 
 .dark .roadmap-tree {
-  --roadmap-line: #5bc4b5;
-  --roadmap-main-bg: #203d3a;
-  --roadmap-main-border: #4c968c;
-  --roadmap-branch-bg: #3b3424;
-  --roadmap-branch-border: #8e7847;
-  --roadmap-choice-recommended: #a88afb;
-  --roadmap-choice-alternative: #7cbc60;
+  --roadmap-line: #8ba2fa;
+  --roadmap-main-bg: #222b49;
+  --roadmap-main-border: #4c649f;
+  --roadmap-branch-bg: #3a3020;
+  --roadmap-branch-border: #806536;
+  --roadmap-choice-recommended: #b4a2ff;
+  --roadmap-choice-alternative: #f09a70;
 }
 
 @media (max-width: 767px) {

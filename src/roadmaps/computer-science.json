@@ -1,14 +1,88 @@
 {
   "version": 1,
   "id": "computer-science",
-  "title": "Computer Science",
+  "title": "Computer Science 基础",
   "storageKey": "computer-science",
-  "viewport": { "width": 760, "height": 560 },
+  "viewport": { "width": 760, "height": 1540 },
   "nodes": [
-    { "id": "root", "label": "Computer Science", "kind": "root", "position": { "x": 300, "y": 48 } },
-    { "id": "start", "label": "待规划", "kind": "main", "position": { "x": 300, "y": 160 } }
+    { "id": "root", "label": "Computer Science 基础", "kind": "root", "position": { "x": 380, "y": 48 } },
+
+    { "id": "programming", "label": "编程与计算思维", "kind": "main", "position": { "x": 380, "y": 150 } },
+    { "id": "language", "label": "选一门主语言", "kind": "branch", "position": { "x": 576, "y": 112 } },
+    { "id": "debugging", "label": "调试、测试与抽象", "kind": "branch", "position": { "x": 576, "y": 168 } },
+    { "id": "representation", "label": "数据表示与内存", "kind": "branch", "position": { "x": 576, "y": 224 } },
+
+    { "id": "discrete-math", "label": "离散数学与逻辑", "kind": "main", "position": { "x": 196, "y": 344 } },
+    { "id": "logic-proofs", "label": "集合、逻辑与证明", "kind": "branch", "position": { "x": 438, "y": 288 } },
+    { "id": "graphs-probability", "label": "组合、图论与概率", "kind": "branch", "position": { "x": 438, "y": 344 } },
+    { "id": "recurrence", "label": "递归与递推关系", "kind": "branch", "position": { "x": 438, "y": 400 } },
+
+    { "id": "algorithms", "label": "数据结构与算法", "kind": "main", "position": { "x": 560, "y": 546 } },
+    { "id": "complexity", "label": "渐进复杂度", "kind": "branch", "position": { "x": 318, "y": 476 } },
+    { "id": "data-structures", "label": "线性结构、树与图", "kind": "branch", "position": { "x": 318, "y": 532 } },
+    { "id": "classic-algorithms", "label": "搜索、排序与遍历", "kind": "branch", "position": { "x": 318, "y": 588 } },
+    { "id": "algorithm-design", "label": "分治、贪心与动态规划", "kind": "branch", "position": { "x": 318, "y": 644 } },
+
+    { "id": "systems", "label": "计算机组成与系统", "kind": "main", "position": { "x": 196, "y": 776 } },
+    { "id": "architecture", "label": "CPU、指令与缓存", "kind": "branch", "position": { "x": 438, "y": 690 } },
+    { "id": "operating-systems", "label": "进程、内存与文件", "kind": "branch", "position": { "x": 438, "y": 746 } },
+    { "id": "concurrency", "label": "线程、同步与并发", "kind": "branch", "position": { "x": 438, "y": 802 } },
+    { "id": "storage-io", "label": "I/O 与持久化", "kind": "branch", "position": { "x": 438, "y": 858 } },
+
+    { "id": "network-data", "label": "网络与数据管理", "kind": "main", "position": { "x": 560, "y": 1014 } },
+    { "id": "networking", "label": "TCP/IP、DNS 与 HTTP", "kind": "branch", "position": { "x": 318, "y": 928 } },
+    { "id": "databases", "label": "建模、关系与 SQL", "kind": "branch", "position": { "x": 318, "y": 984 } },
+    { "id": "transactions", "label": "索引、事务与一致性", "kind": "branch", "position": { "x": 318, "y": 1040 } },
+    { "id": "distributed-basics", "label": "扩展、复制与分片", "kind": "branch", "position": { "x": 318, "y": 1096 } },
+
+    { "id": "theory", "label": "计算理论与语言", "kind": "main", "position": { "x": 196, "y": 1252 } },
+    { "id": "automata", "label": "自动机与可计算性", "kind": "branch", "position": { "x": 438, "y": 1196 } },
+    { "id": "complexity-classes", "label": "复杂度类：P 与 NP", "kind": "branch", "position": { "x": 438, "y": 1252 } },
+    { "id": "programming-languages", "label": "编译、类型与语言范式", "kind": "branch", "position": { "x": 438, "y": 1308 } },
+
+    { "id": "practice", "label": "系统实践与方向", "kind": "main", "position": { "x": 380, "y": 1440 } },
+    { "id": "build-tool", "label": "实现一个命令行工具", "kind": "branch", "position": { "x": 576, "y": 1382 } },
+    { "id": "build-system", "label": "实现一个小型系统", "kind": "branch", "position": { "x": 576, "y": 1438 } },
+    { "id": "choose-track", "label": "进入专项学习路线", "kind": "branch", "position": { "x": 576, "y": 1494 } }
   ],
   "edges": [
-    { "id": "main-1", "source": "root", "target": "start", "kind": "main", "sourceHandle": "bottom", "targetHandle": "top" }
+    { "id": "main-root-programming", "source": "root", "target": "programming", "kind": "main", "sourceHandle": "bottom", "targetHandle": "top" },
+    { "id": "main-programming-math", "source": "programming", "target": "discrete-math", "kind": "main", "sourceHandle": "bottom", "targetHandle": "top", "bend": 246 },
+    { "id": "main-math-algorithms", "source": "discrete-math", "target": "algorithms", "kind": "main", "sourceHandle": "bottom", "targetHandle": "top", "bend": 445 },
+    { "id": "main-algorithms-systems", "source": "algorithms", "target": "systems", "kind": "main", "sourceHandle": "bottom", "targetHandle": "top", "bend": 664 },
+    { "id": "main-systems-network", "source": "systems", "target": "network-data", "kind": "main", "sourceHandle": "bottom", "targetHandle": "top", "bend": 894 },
+    { "id": "main-network-theory", "source": "network-data", "target": "theory", "kind": "main", "sourceHandle": "bottom", "targetHandle": "top", "bend": 1132 },
+    { "id": "main-theory-practice", "source": "theory", "target": "practice", "kind": "main", "sourceHandle": "bottom", "targetHandle": "top", "bend": 1348 },
+
+    { "id": "branch-programming-language", "source": "programming", "target": "language", "kind": "branch", "sourceHandle": "right", "targetHandle": "left" },
+    { "id": "branch-programming-debugging", "source": "programming", "target": "debugging", "kind": "branch", "sourceHandle": "right", "targetHandle": "left" },
+    { "id": "branch-programming-representation", "source": "programming", "target": "representation", "kind": "branch", "sourceHandle": "right", "targetHandle": "left" },
+
+    { "id": "branch-math-logic", "source": "discrete-math", "target": "logic-proofs", "kind": "branch", "sourceHandle": "right", "targetHandle": "left" },
+    { "id": "branch-math-graphs", "source": "discrete-math", "target": "graphs-probability", "kind": "branch", "sourceHandle": "right", "targetHandle": "left" },
+    { "id": "branch-math-recurrence", "source": "discrete-math", "target": "recurrence", "kind": "branch", "sourceHandle": "right", "targetHandle": "left" },
+
+    { "id": "branch-algorithms-complexity", "source": "algorithms", "target": "complexity", "kind": "branch", "sourceHandle": "left", "targetHandle": "right" },
+    { "id": "branch-algorithms-structures", "source": "algorithms", "target": "data-structures", "kind": "branch", "sourceHandle": "left", "targetHandle": "right" },
+    { "id": "branch-algorithms-classic", "source": "algorithms", "target": "classic-algorithms", "kind": "branch", "sourceHandle": "left", "targetHandle": "right" },
+    { "id": "branch-algorithms-design", "source": "algorithms", "target": "algorithm-design", "kind": "branch", "sourceHandle": "left", "targetHandle": "right" },
+
+    { "id": "branch-systems-architecture", "source": "systems", "target": "architecture", "kind": "branch", "sourceHandle": "right", "targetHandle": "left" },
+    { "id": "branch-systems-os", "source": "systems", "target": "operating-systems", "kind": "branch", "sourceHandle": "right", "targetHandle": "left" },
+    { "id": "branch-systems-concurrency", "source": "systems", "target": "concurrency", "kind": "branch", "sourceHandle": "right", "targetHandle": "left" },
+    { "id": "branch-systems-storage", "source": "systems", "target": "storage-io", "kind": "branch", "sourceHandle": "right", "targetHandle": "left" },
+
+    { "id": "branch-network-networking", "source": "network-data", "target": "networking", "kind": "branch", "sourceHandle": "left", "targetHandle": "right" },
+    { "id": "branch-network-databases", "source": "network-data", "target": "databases", "kind": "branch", "sourceHandle": "left", "targetHandle": "right" },
+    { "id": "branch-network-transactions", "source": "network-data", "target": "transactions", "kind": "branch", "sourceHandle": "left", "targetHandle": "right" },
+    { "id": "branch-network-distributed", "source": "network-data", "target": "distributed-basics", "kind": "branch", "sourceHandle": "left", "targetHandle": "right" },
+
+    { "id": "branch-theory-automata", "source": "theory", "target": "automata", "kind": "branch", "sourceHandle": "right", "targetHandle": "left" },
+    { "id": "branch-theory-complexity", "source": "theory", "target": "complexity-classes", "kind": "branch", "sourceHandle": "right", "targetHandle": "left" },
+    { "id": "branch-theory-languages", "source": "theory", "target": "programming-languages", "kind": "branch", "sourceHandle": "right", "targetHandle": "left" },
+
+    { "id": "branch-practice-tool", "source": "practice", "target": "build-tool", "kind": "branch", "sourceHandle": "right", "targetHandle": "left" },
+    { "id": "branch-practice-system", "source": "practice", "target": "build-system", "kind": "branch", "sourceHandle": "right", "targetHandle": "left" },
+    { "id": "branch-practice-track", "source": "practice", "target": "choose-track", "kind": "branch", "sourceHandle": "right", "targetHandle": "left" }
   ]
 }

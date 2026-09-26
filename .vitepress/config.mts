@@ -63,13 +63,14 @@ export default defineConfig({
   themeConfig: {
     siteTitle: 'ZZULI<span>.dev</span>',
     nav: [
-      { text: '起步', link: '/getting-started/introduction' },
       {
-        text: '工具',
+        text: '<span class="vpi-square-pen zz-nav-icon" aria-hidden="true"></span><span class="visually-hidden">工具</span>',
         items: [{ text: '路线图编辑器', link: '/roadmap-editor' }],
       },
-      { text: '参与贡献', link: '/contributing/guide' },
-      { text: '更多', link: '/more' },
+      {
+        text: '<span class="vpi-sparkles zz-nav-icon" aria-hidden="true"></span><span class="visually-hidden">更多</span>',
+        link: '/more',
+      },
     ],
     socialLinks: [
       {
