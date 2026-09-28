@@ -558,6 +558,27 @@
   content: "";
 }
 
+.zz-hero::after {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background-image:
+    linear-gradient(rgb(82 161 158 / 24%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(82 161 158 / 24%) 1px, transparent 1px);
+  background-position: right 0 top 0;
+  background-size: 30px 30px;
+  mask-image: radial-gradient(150px circle at var(--zz-grid-x) var(--zz-grid-y), #000 0%, transparent 72%);
+  -webkit-mask-image: radial-gradient(150px circle at var(--zz-grid-x) var(--zz-grid-y), #000 0%, transparent 72%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  content: "";
+}
+
+.zz-hero:hover::after {
+  opacity: 1;
+}
+
 .zz-hero-copy {
   max-width: 610px;
 }
@@ -673,6 +694,12 @@
     linear-gradient(90deg, rgb(189 225 219 / 8%) 1px, transparent 1px);
 }
 
+.dark .zz-hero::after {
+  background-image:
+    linear-gradient(rgb(126 209 199 / 24%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(126 209 199 / 24%) 1px, transparent 1px);
+}
+
 .dark .zz-primary-action {
   color: #171717;
   background: #7ed1c7;
@@ -758,6 +785,10 @@
   }
 
   .zz-hero::before {
+    display: none;
+  }
+
+  .zz-hero::after {
     display: none;
   }
 
